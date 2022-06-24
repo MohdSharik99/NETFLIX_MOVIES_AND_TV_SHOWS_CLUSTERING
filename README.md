@@ -54,8 +54,7 @@ Kmodes
 
 
 Clustering :
-
-we will be performing Clustering over the cleaned dataset i.e updated_dataset as we already have gone thorugh our data and seen that the data contains a lot of categorigal features and hence we will be using Kmodes clustering method as this method is the most suitable available method for clustering for categorical data. Also we know that most of the algorithms can not be applied on the dataset that has categorical features as they do not yield good resluts and and will will be applying require some transformations from categorical features to numerical features. Although this task can be performed manually with help of encoding and PCA( principal component analysis) but we also have well defined algorithm to perform the same transformation named `UMAP', MCA [ ( Uniform Manifold Approximation and Projection), (multiple correspondense analysis ) ] which comes under Prince library.
+we have applied Unsupervised machine learning clustering algorithms.first we hve plot Elbow curve and for K-means algorithm and then we will see what are the different scores for different no. of clusters and finally we will decide optimal no. of clusters. then we will use second algorithm as heirarchical clustering and no. of clusters we can define using dendograms. We also see the results of DBSCAN algorithm.hence we are going to use below algorithms.
 
 The steps that are involved in this section will be as follows: 1 - Apply K-modes clustering on categorical data and find out the best value of K using albow method
 
@@ -63,20 +62,13 @@ The steps that are involved in this section will be as follows: 1 - Apply K-mode
 
 3 - implimenting UMAP and converting it to a dataframe.
 
-4 - implimenting Clustering models on transformed data say X and find out best no. of clusters. in this process we will be using a couple of clustering model- a) DBSCAN
-
+4 - implimenting Clustering models on transformed data say X and find out best no. of clusters. in this process we will be using a couple of clustering model- 
+a) K means and validation using Silhouette score
 b) Hierarchical
-
-c) Spectral clustering
-
-d) K means and validation using Silhouette score
-
-Uniform Manifold Approximation and Projection for Dimension Reduction (UMAP)
-UMAP is a dimensionality reduction technique predicated upon manifold learning & ideas from topological data analysis. It provides a general framework for applying dimensionality reduction and is an incredibly powerful tool in any data scientist’s arsenal. In order to apply UMAP to mixed data we must create two separate manifolds one for each data type, as UMAP still needs to compute distances between points. These two manifolds are then combined either by computing the Union which preserves the categorical embedding more, or by calculating the intersection which will cause the embedding to more closely resemble the numerical manifold.
+d) DBSCAN
 
 
-
-
+Approach Taken :
 
 This project was divided into 7 sections where each section.
 
@@ -92,4 +84,17 @@ Section 5: In this section we have performed NLP to find out which are the top 1
 
 Section 6: In this section we have perform various clustering methods to find out best no. of clusters and for validation we have used Silhouette score and elbow curve where ever it is applicable.
 
-finally we have reached to the conclusion that the optimal no. of clusters that can be formed using the given data is 3
+finally we have reached to the conclusion that the optimal no. of clusters that can be formed using the given data is 8
+
+
+Conclusions:
+1: In this section we have simply loaded our dataset into google colab and explored the basic information about data.
+2: In section 2 we have dealt with missing values and imputed the missing values depending on the certain assumption so that we do not miss out important information of the data.
+3: In this section We have foused on the EDA part where we have performed a detailed EDA on all the possible columns we have drawn a lot of insights even though the data in some columns was not in appropriate format such as cast, listed_in etc.
+4: in this section we have dealt with outliers where we have used general way remove categorical outliers and then we have used isolation forest to remove numeric outliers and visualise out data before and after the process.
+5: In this section we have performed NLP to find out which are the top 10 similar movies and TV shows
+6: In this section we have perform various clustering methods to find out best no. of clusters and for validation we have used Silhouette score and elbow curve where ever it is applicable.
+7: in this section we have prepared the data for machine learning.
+
+finally, we have reached to the conclusion that the optimal no. of clusters that can be formed using the given data is 8.
+
